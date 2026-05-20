@@ -1,0 +1,623 @@
+:root {
+    --primary-color: #2e7d32; /* Deep green */
+    --primary-light: #60ad5e;
+    --primary-dark: #005005;
+    --secondary-color: #f4a261; /* Earthy orange/sand */
+    --bg-color: #f0f7f4; /* Very light mint/greenish white */
+    --card-bg: rgba(255, 255, 255, 0.9);
+    --text-color: #2d3436;
+    --text-muted: #636e72;
+    --border-color: #e0e0e0;
+    --danger-color: #e74c3c;
+    --btn-light-green: #a8e6cf;
+    --btn-light-green-hover: #8ae0bd;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: var(--bg-color);
+    background-image: radial-gradient(circle at top right, #e8f5e9, transparent 40%),
+                      radial-gradient(circle at bottom left, #fff3e0, transparent 40%);
+    color: var(--text-color);
+    line-height: 1.6;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+.app-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header */
+.app-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    animation: fadeInDown 0.8s ease;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.app-header h1 {
+    font-size: 2.5rem;
+    color: var(--primary-dark);
+    font-weight: 800;
+}
+
+.app-header p {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+/* View Sections */
+.view-section {
+    animation: fadeInUp 0.5s ease;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Landing Page */
+.landing-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .landing-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+.landing-card {
+    background: var(--card-bg);
+    border-radius: 20px;
+    padding: 3rem 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(10px);
+    border: 2px solid transparent;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.landing-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary-light);
+    box-shadow: 0 15px 35px rgba(96, 173, 94, 0.2);
+}
+
+.landing-card img {
+    height: 120px;
+    width: auto;
+    object-fit: contain;
+    margin-bottom: 1rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.landing-card:hover img {
+    transform: scale(1.05);
+}
+
+.landing-card h2 {
+    color: var(--primary-dark);
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.landing-card p {
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* Cards */
+.card {
+    background: var(--card-bg);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.card h2 {
+    color: var(--primary-dark);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-bottom: 2px solid var(--primary-light);
+    padding-bottom: 0.5rem;
+}
+
+/* Forms */
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-row {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-end;
+    margin-bottom: 1.5rem;
+}
+
+.flex-1 { flex: 1; }
+.flex-2 { flex: 2; }
+.flex-3 { flex: 3; }
+
+.btn-group {
+    flex: 0 0 auto;
+    margin-bottom: 0;
+}
+
+.btn-group .btn {
+    width: auto;
+    padding: 0.8rem 1.2rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+input, select {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: #fff;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--primary-light);
+    box-shadow: 0 0 0 4px rgba(96, 173, 94, 0.1);
+}
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.btn:active {
+    transform: translateY(2px);
+}
+
+.btn-nav {
+    /* Style removed, applied directly to landing cards or back button */
+}
+
+.btn-back {
+    width: auto;
+    background: transparent;
+    color: var(--primary-color);
+    padding: 0.5rem 0;
+    margin-bottom: 1rem;
+    justify-content: flex-start;
+}
+
+.btn-back:hover {
+    color: var(--primary-dark);
+    transform: translateX(-5px);
+}
+
+.btn-add-item {
+    background-color: var(--btn-light-green);
+    color: var(--primary-dark);
+    box-shadow: 0 4px 15px rgba(168, 230, 207, 0.4);
+}
+
+.btn-add-item:hover {
+    background-color: var(--btn-light-green-hover);
+    box-shadow: 0 6px 20px rgba(168, 230, 207, 0.6);
+}
+
+.btn-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+    height: 47px; /* Align with input fields */
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+}
+
+.btn-secondary {
+    background-color: #fff;
+    color: var(--primary-dark);
+    border: 2px solid var(--primary-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-delete {
+    background-color: transparent;
+    color: var(--danger-color);
+    padding: 0.4rem;
+    width: auto;
+    border-radius: 6px;
+}
+
+.btn-delete:hover {
+    background-color: rgba(231, 76, 60, 0.1);
+}
+
+/* Saved Items List */
+.saved-items {
+    margin-top: 2rem;
+}
+
+.saved-items h3 {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+}
+
+#saved-items-list {
+    list-style: none;
+    max-height: 200px;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+}
+
+#saved-items-list li {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 0.8rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 4px solid var(--primary-light);
+    font-size: 0.9rem;
+}
+
+.item-badge {
+    background: var(--primary-color);
+    color: white;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* Table */
+.table-container {
+    overflow-x: auto;
+    margin-bottom: 2rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+th, td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+th {
+    background-color: #f8f9fa;
+    color: var(--primary-dark);
+    font-weight: 600;
+}
+
+tbody tr {
+    transition: background-color 0.2s;
+}
+
+tbody tr:hover {
+    background-color: #f1f8f5;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 2rem !important;
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+/* Summary */
+.proposal-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #e8f5e9;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px dashed var(--primary-light);
+}
+
+.total-row {
+    display: flex;
+    flex-direction: column;
+}
+
+.total-row span:first-child {
+    font-size: 1rem;
+    color: var(--primary-dark);
+    font-weight: 600;
+}
+
+.total-amount {
+    font-size: 2rem;
+    color: var(--primary-color);
+    font-weight: 800;
+}
+
+.proposal-summary .btn {
+    width: auto;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--primary-light); 
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color); 
+}
+
+/* Export Buttons */
+.export-buttons {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+.btn-export {
+    background-color: #fff;
+    color: var(--primary-dark);
+    border: 1px solid var(--border-color);
+    padding: 0.5rem 0.8rem;
+    font-size: 0.9rem;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.2s;
+    font-weight: 600;
+}
+.btn-export:hover {
+    background-color: #f1f8f5;
+    border-color: var(--primary-light);
+    transform: translateY(-2px);
+}
+
+/* Sadece Yazdırmada Görünecek Alanlar (Ekranda Gizli) */
+.print-header, .print-footer {
+    display: none;
+}
+
+/* YAZDIRMA TASARIMI (PRINT) */
+@media print {
+    /* Genel Ayarlar */
+    body {
+        background: none !important;
+        background-color: white !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        color: black !important;
+    }
+
+    .app-container {
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+    }
+
+    .card {
+        box-shadow: none !important;
+        border: none !important;
+        padding: 0 !important;
+        background: none !important;
+    }
+
+    /* Gizlenecek Elemanlar */
+    #main-header, 
+    #task-form, 
+    .btn-back, 
+    .export-buttons, 
+    .btn-delete,
+    .app-header,
+    .landing-cards,
+    h2 .icon {
+        display: none !important;
+    }
+
+    /* İşlem Sütununu Gizle */
+    #proposal-table th:last-child,
+    #proposal-table td:last-child {
+        display: none !important;
+    }
+
+    /* Print Header (Şirket ve Müşteri Bilgileri) */
+    .print-header {
+        display: flex !important;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 2rem;
+        border-bottom: 2px solid #333;
+        padding-bottom: 1rem;
+    }
+
+    .print-company-info h1 {
+        color: #2e7d32 !important; /* Logoya uygun yeşil kalsın */
+        margin-bottom: 0.5rem;
+        font-size: 1.8rem;
+    }
+
+    .print-company-info p {
+        margin: 0.1rem 0;
+        font-size: 0.95rem;
+        color: #333;
+    }
+
+    .print-customer-info {
+        text-align: right;
+    }
+
+    .print-customer-info h2 {
+        font-size: 1.5rem;
+        color: #333 !important;
+        margin-bottom: 1rem;
+        border: none !important;
+        padding: 0 !important;
+    }
+
+    .info-line {
+        margin-bottom: 0.5rem;
+        font-size: 1rem;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .info-line span {
+        font-weight: 600;
+        min-width: 70px;
+    }
+
+    /* Tablo Düzeni */
+    table {
+        border: 1px solid #000;
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+
+    th, td {
+        border: 1px solid #000;
+        padding: 8px 12px;
+        color: black !important;
+    }
+
+    th {
+        background-color: #f2f2f2 !important;
+        -webkit-print-color-adjust: exact; /* Renklerin çıkması için */
+        print-color-adjust: exact;
+    }
+
+    .proposal-summary {
+        background: none !important;
+        border: none !important;
+        padding: 0 !important;
+        justify-content: flex-end;
+        margin-top: 2rem;
+    }
+
+    .total-row {
+        text-align: right;
+        padding-top: 1rem;
+        border-top: 2px solid #000;
+    }
+
+    .total-amount {
+        color: black !important;
+    }
+
+    /* Print Footer (İmza ve Not) */
+    .print-footer {
+        display: flex !important;
+        justify-content: space-between;
+        margin-top: 4rem;
+        page-break-inside: avoid;
+    }
+
+    .footer-note {
+        font-style: italic;
+        font-size: 0.9rem;
+        color: #555;
+        max-width: 60%;
+    }
+
+    .signature-box {
+        text-align: center;
+    }
+
+    .signature-line {
+        margin-top: 3rem;
+        border-top: 1px solid #000;
+        width: 200px;
+    }
+}
