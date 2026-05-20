@@ -83,7 +83,7 @@ function updateSavedItemsUI() {
         const li = document.createElement('li');
         li.innerHTML = `
             <span>${item.name} <span style="color:#666; font-size:0.8rem;">(${item.unit})</span></span>
-            <span class="item-badge">${item.price.toLocaleString('tr-TR')} TL</span>
+            <span class="item-badge">${item.price.toLocaleString('tr-TR')} €</span>
         `;
         savedItemsList.appendChild(li);
     });
@@ -101,7 +101,7 @@ function updateSelectDropdown() {
     serviceItems.forEach(item => {
         const option = document.createElement('option');
         option.value = item.id;
-        option.textContent = `${item.name} (${item.price} TL / ${item.unit})`;
+        option.textContent = `${item.name} (${item.price} € / ${item.unit})`;
         selectItem.appendChild(option);
     });
 }
@@ -166,7 +166,7 @@ function updateProposalUI() {
 
     if (proposalTasks.length === 0) {
         proposalBody.innerHTML = `<tr><td colspan="5" class="empty-state">Henüz teklife işlem eklenmedi.</td></tr>`;
-        grandTotalEl.textContent = '0.00 TL';
+        grandTotalEl.textContent = '0.00 €';
         return;
     }
 
@@ -177,8 +177,8 @@ function updateProposalUI() {
         tr.innerHTML = `
             <td><strong>${task.item.name}</strong></td>
             <td>${task.quantity} ${task.item.unit}</td>
-            <td>${task.item.price.toLocaleString('tr-TR')} TL</td>
-            <td style="color:var(--primary-dark); font-weight:bold;">${task.total.toLocaleString('tr-TR')} TL</td>
+            <td>${task.item.price.toLocaleString('tr-TR')} €</td>
+            <td style="color:var(--primary-dark); font-weight:bold;">${task.total.toLocaleString('tr-TR')} €</td>
             <td>
                 <button type="button" class="btn btn-delete" onclick="removeTask('${task.taskId}')" title="Sil">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -193,7 +193,7 @@ function updateProposalUI() {
         proposalBody.appendChild(tr);
     });
 
-    grandTotalEl.textContent = `${grandTotal.toLocaleString('tr-TR', {minimumFractionDigits: 2, maximumFractionDigits: 2})} TL`;
+    grandTotalEl.textContent = `${grandTotal.toLocaleString('tr-TR', {minimumFractionDigits: 2, maximumFractionDigits: 2})} €`;
 }
 
 // DOM Elements - Export Buttons

@@ -24,13 +24,13 @@
         <main id="landing-view" class="view-section active">
             <div class="landing-cards">
                 <button class="landing-card btn-nav" data-target="input-view">
-                    <img src="ChatGPT Image 18 May 2026 22_12_27.png" alt="Veri Girişi">
+                    <img src="Image 18 May 2026 22_12_27.png" alt="Veri Girişi">
                     <h2>Veri Girişi & Fiyatlandırma</h2>
                     <p>Yeni hizmet kalemleri oluşturun ve birim fiyatlarını belirleyin.</p>
                 </button>
 
                 <button class="landing-card btn-nav" data-target="proposal-view">
-                    <img src="ChatGPT Image 18 May 2026 22_12_28.png" alt="İşlemler">
+                    <img src="Image 18 May 2026 22_12_28.png" alt="İşlemler">
                     <h2>Yapılacak İşlemler & Teklif</h2>
                     <p>Kayıtlı kalemleri seçerek müşteri için teklif ve görev listesi hazırlayın.</p>
                 </button>
@@ -69,7 +69,7 @@
                     </div>
 
                     <button type="submit" class="btn btn-add-item">
-                        <img src="ChatGPT Image 18 May 2026 22_12_28.png" alt="Ekle" class="btn-icon">
+                        <img src="Image 18 May 2026 22_12_28.png" alt="Ekle" class="btn-icon">
                         Kalemi Kaydet
                     </button>
                 </form>
@@ -85,7 +85,7 @@
 
         <!-- Yapılacak İşlemler / Teklif Sayfası -->
         <main id="proposal-view" class="view-section hidden">
-            
+
             <!-- Yazdırma Görünümü İçin Başlık (Sadece Print'te görünür) -->
             <div class="print-header">
                 <div class="print-company-info">
@@ -98,9 +98,12 @@
                 </div>
                 <div class="print-customer-info">
                     <h2>TEKLİF FORMU</h2>
-                    <div class="info-line"><span>Tarih:</span> ....................................................</div>
-                    <div class="info-line"><span>Müşteri:</span> ....................................................</div>
-                    <div class="info-line"><span>Adres:</span> ....................................................</div>
+                    <div class="info-line"><span>Tarih:</span> ....................................................
+                    </div>
+                    <div class="info-line"><span>Müşteri:</span> ....................................................
+                    </div>
+                    <div class="info-line"><span>Adres:</span> ....................................................
+                    </div>
                 </div>
             </div>
 
@@ -148,18 +151,21 @@
                 <div class="proposal-summary">
                     <div class="total-row">
                         <span>Genel Toplam:</span>
-                        <span id="grand-total" class="total-amount">0.00 TL</span>
+                        <span id="grand-total" class="total-amount">0.00 €</span>
                     </div>
                     <div class="export-buttons">
-                        <button type="button" id="export-pdf" class="btn btn-export" title="PDF Olarak Kaydet">📄 PDF</button>
-                        <button type="button" id="export-word" class="btn btn-export" title="Word Olarak Kaydet">📝 Word</button>
+                        <button type="button" id="export-pdf" class="btn btn-export" title="PDF Olarak Kaydet">📄
+                            PDF</button>
+                        <button type="button" id="export-word" class="btn btn-export" title="Word Olarak Kaydet">📝
+                            Word</button>
                         <button type="button" id="print-btn" class="btn btn-secondary">🖨️ Yazdır</button>
                     </div>
                 </div>
 
                 <!-- Yazdırma Görünümü İçin Alt Bilgi (Sadece Print'te görünür) -->
                 <div class="print-footer">
-                    <div class="footer-note">Bizi tercih ettiğiniz için teşekkür ederiz. İşbu teklif bilgilendirme amaçlıdır.</div>
+                    <div class="footer-note">Bizi tercih ettiğiniz için teşekkür ederiz. İşbu teklif bilgilendirme
+                        amaçlıdır.</div>
                     <div class="signature-box">
                         <p>Müşteri Onayı / İmza</p>
                         <div class="signature-line"></div>
